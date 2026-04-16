@@ -37,7 +37,7 @@ banner.py / color.py: Handles terminal aesthetics and randomization.
 Clone the Repo:
 
 Bash
-git clone https://github.com/your-username/QRJacker.git
+git clone https://github.com/Deneth-Kavinda-00/QRJacker.git
 cd QRJacker
 Organize Templates:
 Ensure your directory contains a templates/ folder with the following files:
